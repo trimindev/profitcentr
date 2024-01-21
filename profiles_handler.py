@@ -1,4 +1,4 @@
-from asyncio import sleep
+from asyncio import sleep, get_event_loop
 from gologin import GoLogin
 from utils import *
 from info_utils import *
@@ -10,7 +10,7 @@ default_create_options = {
     "navigator": {
         "language": "en-US",
         "userAgent": "random",
-        "resolution": "1920x1080",
+        "resolution": "1024x768",
         "platform": "mac",
     },
     "proxy": {
@@ -43,15 +43,15 @@ default_create_options = {
     },
 }
 
-default_init_options = {
+default_profiles_options = {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTk3OWJkMGViOWU2M2YzNDcwZDU5MjMiLCJ0eXBlIjoiZGV2Iiwiand0aWQiOiI2NTlkMmQwOTc3NDJjNTdiYTg1ZWJkNzUifQ.gXbYZNg6NqNNTm301zzlg7cjsBedsB7hCadje8jzq8s",
     "profiles_path": "C:\\Users\\xinch\\Desktop\\1.Projects\\auto-browser\\Profiles",
     "profiles_info_path": "C:\\Users\\xinch\\Desktop\\1.Projects\\auto-browser\\Profiles\\info.json",
-    "executablePath": "C:/Users/xinch/.gologin/browser/orbita-browser-120/chrome.exe",
+    "executablePath": "C:/Users/xinch/.gologin/browser/orbita-browser-120/chrome_proxy.exe",
     "create_options": default_create_options,
 }
 
-default_info = {
+default_profile_info = {
     "name": "",
     "id": "",
     "tag": ["", ""],
@@ -61,7 +61,7 @@ default_info = {
 
 
 class Profiles:
-    def __init__(self, options=default_init_options):
+    def __init__(self, options=default_profiles_options):
         self.token = options.get("token")
         self.profiles_path = options.get("profiles_path")
         self.profiles_info_path = options.get("profiles_info_path")
@@ -90,7 +90,7 @@ class Profiles:
 
         return print(f"delete profile {profile_id} successfully")
 
-    async def create(self, info=default_info):
+    async def create(self, info=default_profile_info):
         gl = GoLogin({"token": self.token})
 
         profile_id = gl.create(self.create_options)
@@ -99,7 +99,7 @@ class Profiles:
 
         gl.start()
 
-        await sleep(1)
+        await sleep(2)
 
         gl_profile_path = gl.profile_path
 
@@ -127,10 +127,10 @@ class Profiles:
                 "executablePath": self.executablePath,
                 "userDataDir": profile_path,
                 "headless": False,
+                "defaultViewport": None,
+                "autoClose": False,
             }
         )
-        page = await browser.newPage()
-        await sleep(3)
 
         return browser
 
@@ -138,3 +138,19 @@ class Profiles:
         all_info = self.Info.get_all_info()
         print("all profiles info:", all_info)
         return all_info
+
+
+if __name__ == "__main__":
+
+    async def main():
+        p = Profiles()
+
+        await p.create()
+
+        # p.setProfileId("87545")
+
+        # browser = await p.start()
+
+    # Run the asynchronous script
+    loop = get_event_loop()
+    loop.run_until_complete(main())

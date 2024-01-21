@@ -1,0 +1,8 @@
+2024/01/22-00:08:26.046 4a74 Reusing MANIFEST C:\Users\xinch\Desktop\1.Projects\auto-browser\Profiles\87545\Default\Local Storage\leveldb/MANIFEST-000001
+2024/01/22-00:08:26.104 4a74 Recovering log #3
+2024/01/22-00:08:26.105 4a74 Level-0 table #3: started
+2024/01/22-00:08:26.131 4a74 Level-0 table #3: 73841 bytes OK
+2024/01/22-00:08:26.133 4a74 Recovering log #4
+2024/01/22-00:08:26.139 4a74 Reusing old log C:\Users\xinch\Desktop\1.Projects\auto-browser\Profiles\87545\Default\Local Storage\leveldb/000004.log 
+2024/01/22-00:08:26.143 4a74 Delete type=0 #3
+2024/01/22-00:08:26.143 4a74 Delete type=2 #5
