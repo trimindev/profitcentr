@@ -1,0 +1,55 @@
+{
+   "checksum": "2e7d78492a788bf63d084629d46b22e9",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13350155428228372",
+            "date_last_used": "13350190793623329",
+            "guid": "b4878878-7a71-48c1-b180-656a5f8f47d8",
+            "id": "36",
+            "name": "Browser check",
+            "type": "url",
+            "url": "https://iphey.com/"
+         }, {
+            "date_added": "13350190767728157",
+            "date_last_used": "13350196776743387",
+            "guid": "cc58473c-68a8-4a6a-8b66-7bb33adc9811",
+            "id": "40",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "ProfiTCentR - Мой аккаунт",
+            "type": "url",
+            "url": "https://profitcentr.com/members"
+         } ],
+         "date_added": "13350155428227762",
+         "date_last_used": "0",
+         "date_modified": "13350190775117149",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13350155428228385",
+         "date_last_used": "0",
+         "date_modified": "13350190767728157",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "37",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13350155428228387",
+         "date_last_used": "0",
+         "date_modified": "13350155428228387",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "38",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
