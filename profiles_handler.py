@@ -47,7 +47,7 @@ default_profiles_options = {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTk3OWJkMGViOWU2M2YzNDcwZDU5MjMiLCJ0eXBlIjoiZGV2Iiwiand0aWQiOiI2NTlkMmQwOTc3NDJjNTdiYTg1ZWJkNzUifQ.gXbYZNg6NqNNTm301zzlg7cjsBedsB7hCadje8jzq8s",
     "profiles_path": "C:\\Users\\xinch\\Desktop\\1.Projects\\auto-browser\\Profiles",
     "profiles_info_path": "C:\\Users\\xinch\\Desktop\\1.Projects\\auto-browser\\Profiles\\info.json",
-    "executablePath": "C:/Users/xinch/.gologin/browser/orbita-browser-120/chrome_proxy.exe",
+    "executablePath": "C:/Users/xinch/.gologin/browser/orbita-browser-120/chrome.exe",
     "create_options": default_create_options,
 }
 
@@ -71,7 +71,7 @@ class Profiles:
         self.profile_id: str
         self.Info = Info(self.profiles_info_path)
 
-    def setProfileId(self, profile_id):
+    async def setProfileId(self, profile_id):
         self.profile_id = profile_id
 
     async def getAllProfileId(self):
@@ -128,7 +128,7 @@ class Profiles:
                 "userDataDir": profile_path,
                 "headless": False,
                 "defaultViewport": None,
-                "autoClose": False,
+                # "autoClose": True,
             }
         )
 
